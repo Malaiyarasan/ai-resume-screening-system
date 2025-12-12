@@ -1,61 +1,91 @@
-# AI Resume Screening System (NLP + Machine Learning)
+# 🧠 AI Resume Screening System  
+A machine learning system that automatically classifies resumes as **Fit** or **Not Fit** for Data/ML roles using **TF-IDF + Logistic Regression**.
 
-This project builds an AI-powered resume screening system that classifies
-resumes into job-fit categories using **NLP + classical ML**.
-
----
-
-## 🧠 Problem
-
-Manual resume screening is slow and subjective.
-This system automates the first-level screening step by:
-
-- Extracting text from resumes
-- Cleaning and vectorizing using NLP
-- Training a classifier to predict job-fit category
+This project includes a full training pipeline, Colab notebook, dataset, model file, and a **live Gradio demo**.
 
 ---
 
-## 🧩 Approach
+## 🚀 Live Demo  
+Paste a resume or summary and see the prediction:
 
-1. **Data Collection**
-   - Dataset of resumes stored in CSV:
-     - `text` → extracted resume text
-     - `label` → job role category
-
-2. **Preprocessing**
-   - Lowercasing
-   - Removing punctuation and numbers
-   - Stopword removal
-   - Tokenization
-
-3. **Feature Extraction**
-   - TF-IDF Vectorization (1–2 grams)
-
-4. **Modeling**
-   - Logistic Regression classifier
-   - Achieved ~92% accuracy on validation set
+👉 https://bc0655af6e7d532ec1.gradio.live
 
 ---
 
-## 🧰 Tech Stack
+## ▶ Run This Project on Google Colab  
 
-- Python
-- Scikit-Learn
-- TF-IDF Vectorizer
-- Pandas / NumPy
+Click the badge to open and run the full notebook:
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Malaiyarasan/ai-resume-screening-system/blob/main/notebooks/resume_screening_ai.ipynb)
 
 ---
 
-## 📁 Project Structure
+## 🧩 How It Works  
+The system performs:
 
-```text
+1. **Text Preprocessing**  
+   - Lowercasing  
+   - Stopword removal  
+   - TF-IDF transformation (1–2 grams)
+
+2. **Modeling**  
+   - Logistic Regression classifier  
+   - Tuned for high precision on "Fit" class  
+
+3. **Evaluation**  
+   - Accuracy  
+   - Classification report  
+   - Confusion matrix  
+
+4. **Deployment**  
+   - Gradio UI for instant testing  
+   - Saved ML pipeline (`resume_model.joblib`)
+
+---
 ai-resume-screening-system/
 │
 ├── data/
-│   └── resumes.csv            # (placeholder)
+│ └── resumes_demo.csv # Sample dataset
+│
+├── models/
+│ └── resume_model.joblib # Trained ML pipeline
+│
+├── notebooks/
+│ └── resume_screening_ai.ipynb # Full Colab notebook
 │
 ├── src/
-│   └── train_resume_model.py  # main ML script
+│ └── train_resume_model.py # Script version of training pipeline
 │
 └── README.md
+
+---
+
+## 🛠 Tech Stack  
+- Python  
+- Pandas, NumPy  
+- scikit-learn  
+- TF-IDF Vectorizer  
+- Logistic Regression  
+- Joblib  
+- Gradio  
+
+---
+
+## 📌 Future Improvements  
+- Add BERT-based classifier  
+- Add PDF resume parser  
+- Multi-class role prediction  
+- Deployment via FastAPI + Docker  
+
+---
+
+## 👤 Author  
+**Malaiyarasan M**  
+AI & Data Engineer  
+👉 GitHub: https://github.com/Malaiyarasan  
+👉 Portfolio: *(to be updated after all projects)*  
+
+
+
+## 📁 Project Structure  
+
